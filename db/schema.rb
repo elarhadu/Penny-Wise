@@ -35,10 +35,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_223038) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
-    t.bigint "author_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_groups_on_author_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,5 +63,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_223038) do
   add_foreign_key "expenses", "users", column: "author_id"
   add_foreign_key "group_expenses", "expenses"
   add_foreign_key "group_expenses", "groups"
-  add_foreign_key "groups", "users", column: "author_id"
+  add_foreign_key "groups", "users"
 end
