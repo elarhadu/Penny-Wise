@@ -1,0 +1,22 @@
+<section class="expenses-section">
+  <%= link_to groups_path, :class => "return-icon" do %>
+  <% end %>
+  <%= image_tag "#{@group.icon}", :class => "group-icon group-icon-big" %>
+  <h3 class="expense-group"><%="#{@group.name}: $#{group_total(@group)}"%></h3>
+
+  <h1>Expenses</h1>
+
+  <%= link_to new_group_expense_path(@group, @expense), :class => "add-category" do%>
+    <p>Add a new Expense</p>
+  <% end %>
+
+  <div id="expenses">
+    <% @expenses.each do |expense| %>
+      <%= render expense %>
+    <% end %>
+  </div>
+
+  <div  class="d-flex flex-column fixed-bottom align-items-center justify-content-center text-center bg-success">
+    <%= link_to "Back to Categories", groups_path, class: "text-white w-100  nav-link border border-white  p-2" %>
+</div>
+</section>

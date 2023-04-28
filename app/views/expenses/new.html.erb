@@ -1,0 +1,7 @@
+<div class="title-return">
+  <h1>New expense</h1>
+  <%= link_to group_expenses_path(@group), :class => "return-icon" do %>
+  <% end %>
+</div>
+
+<%= render "form", expense: @expense %>

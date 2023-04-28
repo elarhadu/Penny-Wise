@@ -1,0 +1,44 @@
+<%= form_with(model: @group, url: groups_path, scope: :group) do |form| %>
+
+<% if @group.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% @group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
+<div class='container py-4'>
+  <div class='container w-70'>
+    
+      <%= form.label 'Select a Category', class: 'fs-5 mb-2' %>
+      <%= form.select :icon, options_for_select([
+        ['Education','education.png'],
+        ['Entertainment','entertainment.png'],
+        ['Food', 'food.png'],
+        ['Hospital','hospital.png'],
+        ['House','house.png'],
+        ['Personal Care','personal_care.png'],
+        ['Saving','saving.png'],
+        ['Transportation','travel.png'],
+        ['Utilities','utilities.png']
+      ]), {}, class:'form-select mb-4', id: 'icon', aria_label: "form-select category" %>
+    
+      <%= form.hidden_field :user_id, value: current_user.id %>
+        <div>
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+        </div>
+        
+      <div class='text-center'>
+        <%= form.submit 'Add category', class: 'btn mt-3 btn-primary' %>
+      </div>
+  </div>
+</div>
+
+<% end %>

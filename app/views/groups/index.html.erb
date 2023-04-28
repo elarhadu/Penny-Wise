@@ -1,0 +1,19 @@
+<section class="container mb-3 p-2">
+    <h1 class="text-center">Categories</h1>
+
+    <% @groups.each do |group| %>
+      <%= link_to group_path(group), class: "text-decoration-none text-dark" do %>
+          <%= render group %>
+      <% end %>
+    <% end %>
+
+
+
+<div  class="d-flex flex-column fixed-bottom align-items-center justify-content-center text-center bg-success">
+    <%= link_to "New Category", new_group_path, class: "text-white w-100  nav-link border border-white  p-2" %>
+</div>
+
+</section>
+
+
+

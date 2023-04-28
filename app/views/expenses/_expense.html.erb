@@ -1,0 +1,10 @@
+<div id="<%= dom_id expense %>">
+  <h3><%= expense.name %></h3>
+
+  <p><%= "$#{expense.amount}" %></p>
+
+  <p><%= expense.created_at.strftime('%b %d, %Y') %></p>
+
+  <%= button_to "Delete", group_expense_path(@group, expense), method: :delete, :class => "delete-button" %>
+
+</div>
