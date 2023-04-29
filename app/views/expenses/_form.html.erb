@@ -31,5 +31,8 @@
       <%= form.label :amount, style: "display: block", class:"form-label" %>
       <%= form.number_field :amount, :required => true, :maxlength => "12",type:"text",class:"form-control",id:"formGroupExampleInput",placeholder:"Amount"%>
     </div>
+    <div class="mb-3">
+    <%= form.select :group_ids, @categories.collect {|category| [category.name, category.id]}, { include_blank: false }, required: true, multiple: true, placeholder: "Select Categories", class: "form-control rounded-0" %>
+    </div>
   <div>
 <% end %>
