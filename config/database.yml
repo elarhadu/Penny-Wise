@@ -23,7 +23,4 @@ test:
 
 production:
   <<: *default
-  database: penny_wise
-  username: postgres
-  password: <%= ENV['1234'] %>
-  port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
