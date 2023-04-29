@@ -64,7 +64,8 @@ Penny Wise is a mobile web application where you can manage your budget: you hav
 
 <!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
-Not Deployed Yet.
+[Penny-Wise](https://penny-wise.onrender.com)
+[Penny-Wise Video Demo](https://www.loom.com/share/2775cf0fe39140baa24c70dfffa6f477)
 
 
 <h2  align="center">UML Diagram<h2>
