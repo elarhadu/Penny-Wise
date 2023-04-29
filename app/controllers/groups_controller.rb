@@ -1,28 +1,27 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[edit update destroy]
-  before_action :set_user, only: %i[index edit create update destroy]
+  before_action :set_user, only: %i[index new create edit update destroy]
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   # GET /groups/new
   def new
-    @group = Group.new
+    @group = current_user.groups.new
   end
 
   # GET /groups/1/edit
   def edit; end
 
   def show
-    @group = Group.find(params[:id])
-    @groups = current_user.groups
+    @group = current_user.groups.find(params[:id])
   end
 
   # POST /groups or /groups.json
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.new(group_params)
 
     if @group.save
       redirect_to groups_path, notice: 'Group was successfully created.'
@@ -42,7 +41,6 @@ class GroupsController < ApplicationController
 
   # DELETE /groups/1 or /groups/1.json
   def destroy
-    @group = Group.find(params[:id])
     @group.destroy
     respond_to do |format|
       format.html { redirect_to groups_path, notice: 'Group was successfully destroyed.' }
@@ -53,11 +51,11 @@ class GroupsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @author = current_user
+    @user = current_user
   end
 
   def set_group
-    @group = set_user.groups.find(params[:id])
+    @group = current_user.groups.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

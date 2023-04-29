@@ -87,13 +87,3 @@
   transform: rotateX(90deg) translateZ(-40px);
   filter: blur(12px);
 }
-
-.registration {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-}
-
-.icon {
-  width: 50px;
-}

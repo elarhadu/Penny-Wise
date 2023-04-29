@@ -1,5 +1,7 @@
-<section class="container mb-3 p-2">
-    <h1 class="text-center">Categories</h1>
+<section>
+ <% if current_user %>
+        <%= render 'layouts/categories_navbar' %>
+      <% end %>
 
     <% @groups.each do |group| %>
       <%= link_to group_path(group), class: "text-decoration-none text-dark" do %>
@@ -9,10 +11,10 @@
 
 
 
-<div  class="d-flex flex-column fixed-bottom align-items-center justify-content-center text-center bg-success">
-    <%= link_to "New Category", new_group_path, class: "text-white w-100  nav-link border border-white  p-2" %>
-</div>
 
+<div class="d-flex flex-column fixed-bottom align-items-center justify-content-center text-center bg-success w-100 p-3">
+  <%= link_to "NEW CATEGORY", new_group_path, class: "text-white w-100  nav-link border border-white  p-2" %>
+</div>
 </section>
 
 

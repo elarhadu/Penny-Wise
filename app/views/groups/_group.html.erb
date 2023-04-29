@@ -1,20 +1,16 @@
-<div id="<%= dom_id group %>">
-<div class="d-flex justify-content-between border border-secondary-subtle p-2 mt-2">
+<div id="<%= dom_id group %>" class="px-2">
+  <div class="d-flex justify-content-between align-items-center border border-secondary-subtle w-100  p-2 mt-2">
+    <%= link_to  group_expenses_path(group), class:'text-decoration-none d-flex mr-4 w-75 align-items-center gap-3'  do %>
+        <%= image_tag group.icon, :class => 'img-fluid img-thumbnail w-25', :alt => "#{group.name} icon" %>
+      <div class="d-flex flex-column">
+        <p class=""><%= group.name %></p>
+        <p class="my-0"><%= group.created_at.strftime('%b %d, %Y') %></p>
+      </div>
   
-      <%= link_to  group_expenses_path(group), class:'text-decoration-none d-flex mr-4'  do %>
-    <div class="col">
-       <%= image_tag group.icon, :class => 'img-fluid img-thumbnail w-25 icon', :alt => "#{group.name} icon" %>
-    </div>
-    <div class="col">
-      <h5><%= group.name %></h5>
-      <h6><%= group.created_at.strftime('%b %d, %Y') %></h6>
-    </div>
- 
-      <% end %>
+    <% end %>
 
-  <div class="col d-flex flex-column">
-    <p><strong><%= "Total: $#{group_total(group)}"%></strong></p>
-    <%= link_to "Delete", @group, method: :delete %>
+    <div class=" d-flex flex-column justify-content-between">
+      <p class=""><strong><%= " $#{group_total(group)}"%></strong></p>
+    </div>
   </div>
 </div>
-</div
