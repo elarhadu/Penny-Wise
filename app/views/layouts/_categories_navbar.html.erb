@@ -1,0 +1,30 @@
+<header class="bg-primary text-white sticky-top">
+<nav class="d-flex justify-content-between align-items-center text-center p-2">
+<a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  <i class="fa-solid fa-bars" style="font-size: 24px; width: 32px; height: 32px;"></i>
+</a>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">PennyWise</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      This is a  mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Categories", groups_path, class: "w-100  nav-link border border-white dropdown-item  p-2" %></li>
+        <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "w-100  nav-link border border-danger dropdown-item  p-2" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h2 class="m-0 p-0">CATEGORIES</h2>
+ <i class="fa-solid fa-magnifying-glass text-white fs-1"></i>
+</nav>
+</header>

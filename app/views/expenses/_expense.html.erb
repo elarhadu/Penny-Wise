@@ -1,0 +1,16 @@
+<div id="<%= dom_id expense %>" >
+  <div class="d-flex justify-content-between align-items-center border border-secondary-subtle w-100  p-2 mt-2">
+    <div class='text-decoration-none d-flex mr-4 w-75 align-items-center gap-3 '>
+      <div class="d-flex flex-column ">
+        <p class=""><%= expense.name %></p>
+        <p class="my-0"><%= expense.created_at.strftime('%b %d, %Y') %></p>
+      </div>
+  
+   </div>
+
+    <div class=" d-flex flex-column justify-content-between">
+
+      <p class=""><strong><%= "$#{expense.amount}" %></strong></p>
+    </div>
+  </div>
+</div>

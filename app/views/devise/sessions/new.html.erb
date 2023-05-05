@@ -1,0 +1,22 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<header class="bg-primary text-white">
+  <nav class="d-flex justify-content-between p-2 align-items-center text-reset">   
+    <a href='/'><i class="fas fa-arrow-left fs-1 text-white"></i></a>
+    <h2 class="m-0 p-0">LOGIN</h2>
+    <%= f.submit "Log in", class: "nav-link" %>
+  </nav> 
+</header>
+
+
+  <div class="mt-3">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control rounded-0" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control rounded-0" %>
+  </div>
+<% end %>
+
+<div class="text-center mt-3">
+    <%= link_to "Forget password?", new_user_password_path, class: "nav-link link-secondary" %>
+</div>

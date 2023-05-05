@@ -1,0 +1,25 @@
+<section class="expenses-section">
+  <% if current_user %>
+        <%= render 'layouts/expenses_navbar' %>
+  <% end %>
+
+  <div class="d-flex gap-2 justify-content-between align-items-center border border-secondary-subtle w-100  px-2 mt-2">
+      <div>
+      <%= image_tag "#{@group.icon}", :class => 'img-fluid img-thumbnail w-50' %>
+      </div>
+      <div class="expense-group d-flex gap-2">
+    <p> <%="#{@group.name}: "%> </p>
+    <p style="font-weight:bold"><%= "$#{group_total(@group)}"%></p>
+    </div>
+  </div>
+
+  <div id="expenses" class="px-2">
+    <% @expenses.each do |expense| %>
+      <%= render expense %>
+    <% end %>
+  </div>
+
+  <div class="d-flex flex-column fixed-bottom align-items-center justify-content-center text-center bg-success w-100 p-3">
+    <%= link_to "NEW EXPENSE", new_group_expense_path(@group, @expense), class: "text-white w-100  nav-link border border-white  p-2" %>
+  </div>
+</section>
